@@ -44,7 +44,6 @@
 				<value id="cmphost-sub" type="host">https://c.delivery.consentmanager.net</value>
 				<value id="cmphost-sub" type="host">https://d.delivery.consentmanager.net</value>
             </values>
-            </values>
         </policy>
         <policy id="media-src">
             <values>
@@ -54,7 +53,6 @@
 				<value id="cmphost-sub" type="host">https://b.delivery.consentmanager.net</value>
 				<value id="cmphost-sub" type="host">https://c.delivery.consentmanager.net</value>
 				<value id="cmphost-sub" type="host">https://d.delivery.consentmanager.net</value>
-            </values>
             </values>
         </policy>
     </policies>
