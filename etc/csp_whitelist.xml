@@ -29,30 +29,30 @@
             <values>
                 <value id="cmpcdn" type="host">https://cdn.consentmanager.net</value>
                 <value id="cmphost-base" type="host">https://delivery.consentmanager.net</value>
-				<value id="cmphost-sub" type="host">https://a.delivery.consentmanager.net</value>
-				<value id="cmphost-sub" type="host">https://b.delivery.consentmanager.net</value>
-				<value id="cmphost-sub" type="host">https://c.delivery.consentmanager.net</value>
-				<value id="cmphost-sub" type="host">https://d.delivery.consentmanager.net</value>
+		<value id="cmphost-sub-a" type="host">https://a.delivery.consentmanager.net</value>
+		<value id="cmphost-sub-b" type="host">https://b.delivery.consentmanager.net</value>
+		<value id="cmphost-sub-c" type="host">https://c.delivery.consentmanager.net</value>
+		<value id="cmphost-sub-d" type="host">https://d.delivery.consentmanager.net</value>
             </values>
         </policy>
         <policy id="img-src">
             <values>
                 <value id="cmpcdn" type="host">https://cdn.consentmanager.net</value>
                 <value id="cmphost-base" type="host">https://delivery.consentmanager.net</value>
-				<value id="cmphost-sub" type="host">https://a.delivery.consentmanager.net</value>
-				<value id="cmphost-sub" type="host">https://b.delivery.consentmanager.net</value>
-				<value id="cmphost-sub" type="host">https://c.delivery.consentmanager.net</value>
-				<value id="cmphost-sub" type="host">https://d.delivery.consentmanager.net</value>
+		<value id="cmphost-sub-a" type="host">https://a.delivery.consentmanager.net</value>
+		<value id="cmphost-sub-b" type="host">https://b.delivery.consentmanager.net</value>
+		<value id="cmphost-sub-c" type="host">https://c.delivery.consentmanager.net</value>
+		<value id="cmphost-sub-d" type="host">https://d.delivery.consentmanager.net</value>
             </values>
         </policy>
         <policy id="media-src">
             <values>
                 <value id="cmpcdn" type="host">https://cdn.consentmanager.net</value>
                 <value id="cmphost-base" type="host">https://delivery.consentmanager.net</value>
-				<value id="cmphost-sub" type="host">https://a.delivery.consentmanager.net</value>
-				<value id="cmphost-sub" type="host">https://b.delivery.consentmanager.net</value>
-				<value id="cmphost-sub" type="host">https://c.delivery.consentmanager.net</value>
-				<value id="cmphost-sub" type="host">https://d.delivery.consentmanager.net</value>
+		<value id="cmphost-sub-a" type="host">https://a.delivery.consentmanager.net</value>
+		<value id="cmphost-sub-b" type="host">https://b.delivery.consentmanager.net</value>
+		<value id="cmphost-sub-c" type="host">https://c.delivery.consentmanager.net</value>
+		<value id="cmphost-sub-d" type="host">https://d.delivery.consentmanager.net</value>
             </values>
         </policy>
     </policies>
