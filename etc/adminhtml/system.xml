@@ -12,14 +12,14 @@
         </tab>
         <section id="cmp" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
-            <label>Settings</label>
+            <label>Cookie Banner</label>
             <tab>cmp</tab>
             <resource>Consentmanager_Cmp::cmp</resource>
             <group id="settings" translate="label comment" type="text" sortOrder="310" showInDefault="1" showInWebsite="1" showInStore="1">
-                <label>consentmanager Settings</label>
+                <label>consentmanager Cookie Banner</label>
                 <comment>
                     <![CDATA[
-                    consentmanager (CMP) helps your website can become GDPR & CCPA compliant with our Cookie Consent Solution<br /><br />
+                    consentmanager (CMP)  Cookie Banner helps your website can become GDPR & CCPA compliant with our Cookie Consent Solution<br /><br />
                     <ul class="list">
                         <li><b>Easy to integrate</b></li>
                         <li><b>GDPR &amp; CCPA compliant</b></li>
@@ -30,35 +30,53 @@
                         <li>More than <b>30 languages</b></li>
                     </ul>
                     <a href="https://www.consentmanager.net/register/" target="_blank" style="text-decoration:underline"><b>Register Now</b></a>
+
+                    <br/><br/>
+                    <p>
+                    Merchant can change their cookie banner design and settings at any time in the <a href="https://app.consentmanager.net/" target="_blank" style="text-decoration:underline"><b>consentmanager account</b></a>.
+                    </p>
                     ]]>
                 </comment>
-                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
                     <label>Enabled</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="cmp_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>CMP Code-ID</label>
-                    <validate>required-entry</validate>
-                    <comment model="Consentmanager\Cmp\Block\Adminhtml\System\CodeIdComment" />
-                </field>
-                <field id="cdn" translate="label" type="text" sortOrder="22" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>CDN</label>
-                    <backend_model>Consentmanager\Cmp\Model\System\Config\Backend\Cdn</backend_model>
-                    <comment model="Consentmanager\Cmp\Block\Adminhtml\System\CdnComment" />
-                </field>
-                <field id="host" translate="label" type="text" sortOrder="24" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>HOST</label>
-                    <backend_model>Consentmanager\Cmp\Model\System\Config\Backend\Host</backend_model>
-                    <comment model="Consentmanager\Cmp\Block\Adminhtml\System\HostComment" />
-                </field>
-                <field id="blocking_mode" translate="label" type="select" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Blocking Mode</label>
-                    <source_model>Consentmanager\Cmp\Model\System\Config\Source\Modes</source_model>
-                    <validate>required-entry</validate>
-                </field>
-                <field id="custom_html" translate="label" type="textarea" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Custom HTML Code</label>
-                </field>
+
+                <group id="auto_install"  translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="120">
+                    <label>Auto Installation</label>
+                    <field id="get_credentials_from_cmp" translate="label"  sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Get Credentials from CMP</label>
+                        <frontend_model>Consentmanager\Cmp\Block\Adminhtml\System\Installnow</frontend_model>
+                    </field>
+                </group>
+
+                <group id="manual_install"  translate="label" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="123">
+                    <label>Manual Installation</label>
+                    <field id="cmp_id" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>CMP Code-ID</label>
+                        <validate>required-entry</validate>
+                        <comment model="Consentmanager\Cmp\Block\Adminhtml\System\CodeIdComment" />
+                    </field>
+                    <field id="cdn" translate="label" type="text" sortOrder="22" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>CDN</label>
+                        <backend_model>Consentmanager\Cmp\Model\System\Config\Backend\Cdn</backend_model>
+                        <comment model="Consentmanager\Cmp\Block\Adminhtml\System\CdnComment" />
+                    </field>
+                    <field id="host" translate="label" type="text" sortOrder="24" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>HOST</label>
+                        <backend_model>Consentmanager\Cmp\Model\System\Config\Backend\Host</backend_model>
+                        <comment model="Consentmanager\Cmp\Block\Adminhtml\System\HostComment" />
+                    </field>
+                    <field id="blocking_mode" translate="label" type="select" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Blocking Mode</label>
+                        <source_model>Consentmanager\Cmp\Model\System\Config\Source\Modes</source_model>
+                        <validate>required-entry</validate>
+                    </field>
+                    <!--field id="custom_html" translate="label" type="textarea" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                        <label>Custom HTML Code</label>
+                    </field-->
+                </group>
+
             </group>
         </section>
      </system>

@@ -2,6 +2,6 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
         <add id="Consentmanager_Cmp::cmp_main" title="consentmanager" module="Consentmanager_Cmp" resource="Consentmanager_Cmp::cmp_main"  sortOrder="50"/>
-        <add id="Consentmanager_Cmp::settings" title="Settings" module="Consentmanager_Cmp" sortOrder="10" action="adminhtml/system_config/edit/section/cmp/" resource="Consentmanager_Cmp::settings" parent="Consentmanager_Cmp::cmp_main"/>
+        <add id="Consentmanager_Cmp::settings" title="Cookie Banner" module="Consentmanager_Cmp" sortOrder="10" action="adminhtml/system_config/edit/section/cmp/" resource="Consentmanager_Cmp::settings" parent="Consentmanager_Cmp::cmp_main"/>
     </menu>
 </config>

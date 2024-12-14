@@ -1,1 +1,49 @@
-"Consent Manager Provider","Consent Manager Provider"
+Installation successful. ,Installation successful. 
+Please clear the Magento Cache once at here: System => Cache Management => Flush Magento Cache.,Please clear the Magento Cache once at here: System => Cache Management => Flush Magento Cache.
+Credentials not fetched.,Credentials not fetched.
+Installation failed. ,Installation failed. 
+Automatic,Automatic
+Semi-Automatic,Semi-Automatic
+Install Now,Install Now
+consentmanager,consentmanager
+Cookie Banner,Cookie Banner
+consentmanager Cookie Banner,consentmanager Cookie Banner
+"consentmanager (CMP)  Cookie Banner helps your website can become GDPR & CCPA compliant with our Cookie Consent Solution<br /><br />
+                    <ul class=""list"">
+                        <li><b>Easy to integrate</b></li>
+                        <li><b>GDPR &amp; CCPA compliant</b></li>
+                        <li>Part of the <b>IAB CMPs</b></li>
+                        <li><b>Compatible</b> with almost all adservers (incl. GAM/AdSense)</li>
+                        <li>Fully <b>customizable</b> to your design</li>
+                        <li><b>integrated Cookie Crawler</b></li>
+                        <li>More than <b>30 languages</b></li>
+                    </ul>
+                    <a href=""https://www.consentmanager.net/register/"" target=""_blank"" style=""text-decoration:underline""><b>Register Now</b></a>
+
+                    <br/><br/>
+                    <p>
+                    Merchant can change their cookie banner design and settings at any time in the <a href=""https://app.consentmanager.net/"" target=""_blank"" style=""text-decoration:underline""><b>consentmanager account</b></a>.
+                    </p>","consentmanager (CMP)  Cookie Banner helps your website can become GDPR & CCPA compliant with our Cookie Consent Solution<br /><br />
+                    <ul class=""list"">
+                        <li><b>Easy to integrate</b></li>
+                        <li><b>GDPR &amp; CCPA compliant</b></li>
+                        <li>Part of the <b>IAB CMPs</b></li>
+                        <li><b>Compatible</b> with almost all adservers (incl. GAM/AdSense)</li>
+                        <li>Fully <b>customizable</b> to your design</li>
+                        <li><b>integrated Cookie Crawler</b></li>
+                        <li>More than <b>30 languages</b></li>
+                    </ul>
+                    <a href=""https://www.consentmanager.net/register/"" target=""_blank"" style=""text-decoration:underline""><b>Register Now</b></a>
+
+                    <br/><br/>
+                    <p>
+                    Merchant can change their cookie banner design and settings at any time in the <a href=""https://app.consentmanager.net/"" target=""_blank"" style=""text-decoration:underline""><b>consentmanager account</b></a>.
+                    </p>"
+Enabled,Enabled
+Auto Installation,Auto Installation
+Get Credentials from CMP,Get Credentials from CMP
+Manual Installation,Manual Installation
+CMP Code-ID,CMP Code-ID
+CDN,CDN
+HOST,HOST
+Blocking Mode,Blocking Mode

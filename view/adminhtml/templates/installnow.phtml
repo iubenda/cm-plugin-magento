@@ -1,0 +1,97 @@
+<div class="cmp-buttons-container">
+    <div id="cmp_api_config" dir="ltr" trbidi="on" style="text-align: left;">
+        <a style="cursor:pointer" class="action-default" id="cmp_cookie_install">
+            <?= /* @escapeNotVerified */ __('Install Now') ?>
+        </a>
+    </div>
+    <div id="cmp-install-messages-success" class="messages" style="margin-top:20px; display: none">
+        <div class="message message-success success">
+            <div id="cmp-install-messages-message-success"></div>
+        </div>
+    </div>
+    <div id="cmp-install-messages-error" class="messages" style="margin-top:20px; display: none">
+        <div class="message message-error error">
+            <div id="cmp-install-messages-message-error"></div>
+        </div>
+    </div>
+</div>
+<script>
+require([
+    'jquery'
+], function(jQuery){
+    function openCmpCookieInstall() {
+        const windowFeatures = "left=100,top=100,width=900,height=500;rel=opener";
+        const cmpWindowHandle = window.open("<?php /* @escapeNotVerified */ echo $block->getInstallUrl() ?>?domain=<?php /* @escapeNotVerified */ echo $block->getDomain() ?>&lang=<?php /* @escapeNotVerified */ echo $block->getLang() ?>&type=<?php /* @escapeNotVerified */ echo $block->getType() ?>&source=<?php /* @escapeNotVerified */ echo $block->getSource() ?>",
+            "cmpWindowHandle",
+            windowFeatures,
+        );
+        if (cmpWindowHandle) {
+            window.addEventListener('message', receiveMessage, false);
+            function receiveMessage(event) { 
+                if (event.origin == "https://app.consentmanager.net") {
+
+                    jQuery('#cmp-install-messages-success').hide();
+                    jQuery('#cmp-install-messages-error').hide();  
+
+                    cmpWindowHandle.opener.focus(); 
+                    cmpWindowHandle.close();
+
+                    const objCredentials = JSON.parse(event.data);
+
+                    const cmpConfigWebsiteId = jQuery('#website_switcher').val();
+                    const cmpConfigStoreId = jQuery('#store_switcher').val();
+
+                    console.log('cmpConfigWebsiteId: '+cmpConfigWebsiteId);
+                    console.log('cmpConfigStoreId: '+cmpConfigStoreId);
+
+                    console.log(objCredentials);
+
+                    jQuery.ajax({
+                        showLoader: true, 
+                        url: '<?php /* @escapeNotVerified */ echo $block->getSaveUrl() ?>', 
+                        data: 'website='+cmpConfigWebsiteId+'&store='+cmpConfigStoreId+'&credentials='+event.data,
+                        type: "POST", 
+                        dataType: 'json'
+                    }).done(function (response) { 
+
+                        if (response.status == 'success') {
+                            jQuery('#cmp-install-messages-success').show();   
+                            jQuery('#cmp-install-messages-message-success').html(response.message);
+
+                            console.log(objCredentials.codeid);
+
+                            jQuery('#cmp_settings_active').val(1);
+                            jQuery('#cmp_settings_manual_install_cmp_id').val(objCredentials.codeid);
+                            jQuery('#cmp_settings_manual_install_cdn').val(objCredentials.cdn);
+                            jQuery('#cmp_settings_manual_install_host').val(objCredentials.host);
+                            jQuery('#cmp_settings_manual_install_blocking_mode').val(objCredentials.blocking);
+
+                            jQuery('#cmp_settings_manual_install_cmp_id_inherit').prop('checked', false);
+                            jQuery('#cmp_settings_manual_install_cdn_inherit').prop('checked', false);
+                            jQuery('#cmp_settings_manual_install_host_inherit').prop('checked', false);
+                            jQuery('#cmp_settings_manual_install_blocking_mode_inherit').prop('checked', false);
+
+                            jQuery('#cmp_settings_manual_install_cmp_id').removeAttr('disabled');
+                            jQuery('#cmp_settings_manual_install_cdn').removeAttr('disabled');
+                            jQuery('#cmp_settings_manual_install_host').removeAttr('disabled');
+                            jQuery('#cmp_settings_manual_install_blocking_mode').removeAttr('disabled');
+                        } else {
+                            jQuery('#cmp-install-messages-error').show();   
+                            jQuery('#cmp-install-messages-message-error').html(response.message);
+                        }
+                        console.log(response); 
+                    });
+                }
+            }
+        } else {
+            alert('Please allow popup blocker for this site.')
+        }
+    }
+
+    jQuery('#cmp_cookie_install').click(function () {
+        openCmpCookieInstall();
+    });
+});
+</script>
+
+
