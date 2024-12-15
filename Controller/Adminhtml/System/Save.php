@@ -53,7 +53,6 @@ class Save extends Action
                 $this->helper->setData(CMPData::CONFIG_CDN_PATH, $this->sanitizeText($credentialsData['cdn']), $scope, $scopeId);
 
                 $this->cacheTypeList->cleanType(\Magento\Framework\App\Cache\Type\Config::TYPE_IDENTIFIER);
-                //$this->cacheTypeList->cleanType(\Magento\PageCache\Model\Cache\Type::TYPE_IDENTIFIER);
 
                 $message = __('Installation successful. ');
                 $message .= '<br/>'.__('Please clear the Magento Cache once at here: System => Cache Management => Flush Magento Cache.');

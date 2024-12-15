@@ -41,11 +41,6 @@ require([
                     const cmpConfigWebsiteId = jQuery('#website_switcher').val();
                     const cmpConfigStoreId = jQuery('#store_switcher').val();
 
-                    console.log('cmpConfigWebsiteId: '+cmpConfigWebsiteId);
-                    console.log('cmpConfigStoreId: '+cmpConfigStoreId);
-
-                    console.log(objCredentials);
-
                     jQuery.ajax({
                         showLoader: true, 
                         url: '<?php /* @escapeNotVerified */ echo $block->getSaveUrl() ?>', 
@@ -57,8 +52,6 @@ require([
                         if (response.status == 'success') {
                             jQuery('#cmp-install-messages-success').show();   
                             jQuery('#cmp-install-messages-message-success').html(response.message);
-
-                            console.log(objCredentials.codeid);
 
                             jQuery('#cmp_settings_active').val(1);
                             jQuery('#cmp_settings_manual_install_cmp_id').val(objCredentials.codeid);
@@ -79,8 +72,7 @@ require([
                             jQuery('#cmp-install-messages-error').show();   
                             jQuery('#cmp-install-messages-message-error').html(response.message);
                         }
-                        console.log(response); 
-                    });
+                     });
                 }
             }
         } else {
