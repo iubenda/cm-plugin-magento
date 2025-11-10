@@ -2,20 +2,25 @@
 
 namespace Consentmanager\Cmp\Block;
 
-class Head extends \Magento\Framework\View\Element\Template
+use Consentmanager\Cmp\Helper\Data as Helper;
+use Magento\Framework\View\Element\Template;
+use Magento\Framework\View\Element\Template\Context;
+
+class Head extends Template
 {
-    protected $helper;
+    private Helper $helper;
 
     public function __construct(
-        \Consentmanager\Cmp\Helper\Data $helper,
-        \Magento\Framework\View\Element\Template\Context $context,
+        Helper $helper,
+        Context $context,
         array $data = []
     ) {
         parent::__construct($context, $data);
+
         $this->helper = $helper;
     }
-    
-    public function getHelper()
+
+    public function getHelper(): Helper
     {
         return $this->helper;
     }

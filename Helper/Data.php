@@ -1,51 +1,44 @@
 <?php
+
 namespace Consentmanager\Cmp\Helper;
 
-class Data extends \Magento\Framework\App\Helper\AbstractHelper
+use Magento\Framework\App\Helper\AbstractHelper;
+use Magento\Framework\App\Helper\Context;
+use Magento\Store\Model\ScopeInterface;
+
+class Data extends AbstractHelper
 {
-    public $resource = '';
-    public function __construct(
-        \Magento\Framework\App\Helper\Context $context,
-        \Magento\Framework\App\ResourceConnection $resource
-    ) {
-        parent::__construct($context);
-        $this->resource = $resource;
-    }
-    
-    public function getStoreConfig($path)
+    public function getStoreConfig(string $path): string
     {
-        return $this->scopeConfig->getValue(
-            $path,
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
-        );
+        return $this->scopeConfig->getValue($path, ScopeInterface::SCOPE_STORE) ?? '';
     }
-    
-    public function isEnabled()
+
+    public function isEnabled(): bool
     {
-        return $this->getStoreConfig('cmp/settings/active');
+        return (bool) $this->getStoreConfig('cmp/settings/active');
     }
-    
-    public function getCMPId()
+
+    public function getCMPId(): string
     {
         return $this->getStoreConfig('cmp/settings/cmp_id');
     }
-	
-    public function getBlockingMode()
+
+    public function getBlockingMode(): string
     {
         return $this->getStoreConfig('cmp/settings/blocking_mode');
     }
-    
-    public function getCustomHtml()
+
+    public function getCustomHtml(): string
     {
         return $this->getStoreConfig('cmp/settings/custom_html');
     }
-    
-    public function getCdn()
+
+    public function getCdn(): string
     {
         return $this->getStoreConfig('cmp/settings/cdn');
     }
-    
-    public function getHost()
+
+    public function getHost(): string
     {
         return $this->getStoreConfig('cmp/settings/host');
     }
